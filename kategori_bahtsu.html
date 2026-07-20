@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Bahtsu</title>
+    <link rel="stylesheet" href="kategori_bahtsu.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 class="title">Kategori Bahtsu Masail</h1>
+        
+        <input type="text" id="filterInput" placeholder="Cari Kategori..." class="filter-input">
+        <div class="rumusan-list" id="kategoriList"></div>
+
+    </div>
+
+<script>
+    const kategoriListElement = document.getElementById('kategoriList');
+
+    // Ambil data dari file data_bahtsu.json
+    fetch('data_bahtsu.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Gagal memuat data_bahtsu.json');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Ekstrak daftar kategori unik dan urutkan sesuai abjad
+            const kategoriUnik = [...new Set(data.map(item => item.kategori))].sort((a, b) => a.localeCompare(b));
+
+            // Buat elemen HTML untuk setiap kategori
+            kategoriUnik.forEach((kategori, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('rumusan-item');
+                itemElement.id = `kategori-${kategori.replace(/\s/g, '_')}`; 
+                
+                itemElement.innerHTML = `
+                    <span class="nomor-urut">${index + 1}.</span>
+                    <span class="nama-kategori-teks">${kategori}</span>
+                `;
+                
+                // Diarahkan ke Daftar bahtsu by kategori.html
+                itemElement.addEventListener('click', () => {
+                    window.location.href = `Daftar_bahtsu_by_kategori.html?kategori=${encodeURIComponent(kategori)}`;
+                });
+
+                kategoriListElement.appendChild(itemElement);
+            });
+        })
+        .catch(error => {
+            console.error('Error memuat atau memproses data:', error);
+            kategoriListElement.innerHTML = '<p>Error: Gagal memuat daftar kategori.</p>';
+        });
+        
+    // Fitur Pencarian Kategori
+    const filterInput = document.getElementById('filterInput');
+    filterInput.addEventListener('input', function() {
+        const kataKunci = this.value.toLowerCase(); 
+        const daftarKategori = document.querySelectorAll('.rumusan-item'); 
+
+        daftarKategori.forEach(item => {
+            const targetTeks = item.querySelector('.nama-kategori-teks');
+            if (targetTeks) {
+                const namaKategori = targetTeks.textContent.toLowerCase(); 
+                if (namaKategori.includes(kataKunci)) {
+                    item.style.display = 'flex'; 
+                } else {
+                    item.style.display = 'none'; 
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

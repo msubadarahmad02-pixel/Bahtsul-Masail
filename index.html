@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musyawaroh & Bahtsu Masail</title>
+    
+    <!-- Google Fonts untuk tampilan font modern & clean -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="styles.css"> 
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker terdaftar!', reg))
+            .catch(err => console.log('Gagal daftar Service Worker:', err));
+        });
+      }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header-zone">
+            <h1 class="title">Musyawaroh<br>Fathul Qorib</h1>
+            <p class="subtitle">Daerah Ngawi</p>
+        </div>
+        
+        <!-- Menu Utama -->
+        <div class="main-grid">
+            
+            <!-- 1. PENCARIAN -->
+            <div class="menu-card" id="pencarianLink">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-title">Pencarian</div>
+                    <div class="menu-desc">Cari istilah dan data rumusan dengan cepat</div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+            </div>
+            
+            <!-- 2. MUSYAWAROH FATHUL QORIB (Bawaan) -->
+            <div class="menu-card" id="daftarIsiLink">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-title">Musyawaroh<br>Fathul Qorib</div>
+                    <div class="menu-desc">Eksplorasi rumusan berdasarkan kategori</div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+            </div>
+
+            <!-- 3. BAHTSU MASAIL (MENU BARU) -->
+            <div class="menu-card" id="bahtsuMasailLink">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-title">Bahtsul Masail</div>
+                    <div class="menu-desc">Eksplorasi data bahtsu berdasarkan kategori baru</div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+            </div>
+
+            <!-- 4. KITAB DIGITAL -->
+            <div class="menu-card" id="alquranLink">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-title">Kitab Digital</div>
+                    <div class="menu-desc">Akses pustaka kitab referensi lengkap</div>
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+            </div>
+
+        </div> 
+        
+        <!-- Bagian Khusus Akses Admin -->
+        <div class="admin-zone">
+            <button id="tambahRumusanLink" class="btn-admin">
+                <i class="fa-solid fa-plus-circle"></i> Tambah Rumusan Baru
+            </button>
+        </div>
+    </div>
+
+    <!-- Script navigasi bawaan -->
+    <script src="script.js"></script> 
+
+<script>
+    document.getElementById('pencarianLink').addEventListener('click', function() {
+        window.location.href = 'pencarian.html'; 
+    });
+    
+    // Tetap mengarah ke menu Fathul Qorib yang lama (kategori.html)
+    document.getElementById('daftarIsiLink').addEventListener('click', function() {
+        window.location.href = 'kategori.html'; 
+    });
+
+    // MENU BARU: Mengarah ke file kategori_bahtsu.html yang baru saja dibuat
+    document.getElementById('bahtsuMasailLink').addEventListener('click', function() {
+        window.location.href = 'kategori_bahtsu.html'; 
+    });
+    
+    document.getElementById('alquranLink').addEventListener('click', function() {
+        window.location.href = 'kitab_digital.html'; 
+    });
+    
+    document.getElementById('tambahRumusanLink').addEventListener('click', function() {
+        window.location.href = 'tambah_rumusan.html'; 
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* ==========================================================================
+   TAMPILAN CERAH ELEGAN: DAFTAR RUMUSAN BY KATEGORI (daftar_rumusan_by_kategori.css)
+   ========================================================================== */
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #f7f9f6 0%, #edf2ec 100%);
+    --card-bg: #ffffff;
+    --card-border: #e2ede0;
+    --card-hover-bg: #f4faf2;
+    --card-hover-border: #a3d995;
+    --text-primary: #2d402b;
+    --accent-color: #3f9e30;
+}
+
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body { 
+    background: #F0E68C; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    color: var(--text-primary);
+    padding: 20px;
+}
+
+/* Container Utama */
+.container { 
+    background-color: var(--card-bg); 
+    border-radius: 24px; 
+    padding: 24px 20px; 
+    width: 100%;
+    max-width: 420px; 
+    box-shadow: 0 8px 20px rgba(47, 133, 34, 0.04); 
+    text-align: center; 
+    box-sizing: border-box;
+    border: 1px solid var(--card-border);
+}
+
+/* Tombol Kembali Premium */
+.back-button { 
+    background-color: #ffffff; 
+    cursor: pointer; 
+    display: inline-block; 
+    margin-bottom: 20px; 
+    color: var(--accent-color); 
+    font-weight: 600; 
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: 1px solid #d2ebd0; 
+    border-radius: 30px; 
+    padding: 6px 16px; 
+    float: left;
+    box-shadow: 0 2px 8px rgba(63, 158, 48, 0.06); 
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: var(--card-hover-bg);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+/* Judul Banner Kategori */
+.title { 
+    clear: both;
+    color: var(--accent-color); 
+    font-weight: 700; 
+    margin-top: 10px;
+    margin-bottom: 20px; 
+    font-size: 1.35rem; 
+    padding: 12px; 
+    border-radius: 16px; 
+    background-color: #f0faf0; 
+    border: 1px solid var(--card-border); 
+    letter-spacing: -0.2px;
+}
+
+/* Input Pencarian Rumusan */
+.filter-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background-color: #f7f9f6;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.filter-input:focus {
+    border-color: var(--accent-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(63, 158, 48, 0.15);
+}
+
+/* Daftar Menu / Item Rumusan */
+.menu-list {
+    margin-top: 5px;
+    max-height: 400px;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 3px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 10px;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item:hover,
+.menu-item:active {
+    background-color: var(--card-hover-bg);
+    border-color: var(--card-hover-border);
+    transform: translateX(3px);
+}
+
+/* Ikon Penanda */
+.menu-item i {
+    margin-right: 14px;
+    font-size: 0.95rem;
+}
+
+.text-accent {
+    color: var(--accent-color);
+    transition: color 0.2s ease;
+}
+
+.menu-item:hover .text-accent {
+    color: #2f8522;
+}
+
+/* Teks Item Rumusan Singkat */
+.menu-item span {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Kustomisasi Scrollbar Menu-List */
+.menu-list::-webkit-scrollbar { width: 5px; }
+.menu-list::-webkit-scrollbar-track { background: transparent; }
+.menu-list::-webkit-scrollbar-thumb { background: #c8dac5; border-radius: 10px; }
+.menu-list::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
+
+
+/* Gaya untuk nomor urut agar rapi dan serasi dengan warna tema */
+.nomor-urut {
+    color: var(--accent-color); /* Menggunakan warna hijau tema */
+    font-weight: 700;
+    margin-right: 5px; /* Memberi jarak antara nomor dan judul teks */
+    min-width: 5px; /* Menjaga posisi teks judul tetap sejajar */
+    display: inline-block;
+}

@@ -1,0 +1,26 @@
+[
+{
+  "id": "haji_belum_diisi",
+  "kategori": "Haji",
+  "judul_pendek": "Belum diisi",
+  "deskripsi": "Belum diisi",
+  "pertanyaan": "Belum diisi",
+  "jawaban": "Belum diisi",
+  "referensi": [
+    "حاج"
+  ]
+    },
+  
+  {
+  "id": "zakat_belum_diisi",
+  "kategori": "Zakat",
+  "judul_pendek": "Belum diisi",
+  "deskripsi": "Belum diisi",
+  "pertanyaan": "Belum diisi",
+  "jawaban": "Belum diisi",
+  "referensi": [
+    "زكاة"
+  ]
+}
+
+]

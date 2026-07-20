@@ -1,0 +1,170 @@
+/* ==========================================================================
+   TAMPILAN CERAH ARTISTIK: PENCARIAN GLOBAL (pencarian.css)
+   ========================================================================== */
+
+:root {
+    /* Background gradasi lembut berpadu dengan aksen bunga */
+    --bg-gradient: linear-gradient(135deg, #f4faf2 0%, #edf2ec 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-border: #e2ede0;
+    --card-hover-bg: #f4faf2;
+    --card-hover-border: #a3d995;
+    --text-primary: #2d402b;
+    --text-secondary: #60735d;
+    --accent-color: #3f9e30;
+    --input-border: #c3dcbe;
+}
+
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body { 
+    background:#F0E68C;
+    /* Menambahkan ornamen seni bunga sudut menggunakan gambar SVG built-in */
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 Q20,5 10,25 Q5,15 0,0 M10,5 Q30,15 20,35 Q15,25 10,5 M0,20 Q15,25 5,45 Q0,35 0,20' fill='none' stroke='%233f9e30' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M100,100 Q80,95 90,75 Q95,85 100,100 M90,95 Q70,85 80,65 Q85,75 90,95 M100,80 Q85,75 95,55 Q100,65 100,80' fill='none' stroke='%233f9e30' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
+    background-position: top left, bottom right;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    color: var(--text-primary);
+    padding: 20px;
+}
+
+/* Container Utama Premium */
+.container { 
+    background-color: var(--card-bg); 
+    border-radius: 24px; 
+    padding: 24px 20px; 
+    width: 100%;
+    max-width: 420px; 
+    box-shadow: 0 12px 30px rgba(47, 133, 34, 0.06); 
+    text-align: center; 
+    box-sizing: border-box;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(8px); /* Efek kaca transparan artistik */
+}
+
+/* Judul Utama */
+.title { 
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #2f8522, #60735d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Kotak Pencarian Modern */
+.search-container { 
+    margin: 15px 0 10px 0; 
+    position: relative; 
+}
+
+.search-input {
+    width: 100%; 
+    padding: 14px 45px 14px 18px; 
+    border-radius: 30px;
+    border: 1.5px solid var(--input-border); 
+    box-sizing: border-box; 
+    font-size: 0.95rem; 
+    outline: none;
+    color: var(--text-primary);
+    background-color: #f7f9f6;
+    transition: all 0.25s ease;
+}
+
+.search-input:focus {
+    border-color: var(--accent-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(63, 158, 48, 0.12);
+}
+
+.search-icon { 
+    position: absolute; 
+    right: 18px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: var(--accent-color); 
+    font-size: 1rem;
+}
+
+/* Jumlah Hasil Pencarian */
+.result-count { 
+    font-size: 0.82rem; 
+    color: var(--text-secondary); 
+    margin-bottom: 15px; 
+    padding-left: 8px; 
+    text-align: left; 
+    font-weight: 500;
+}
+
+/* Daftar Item Menu Hasil Pencarian */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 14px 16px;
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(47, 133, 34, 0.01);
+}
+
+.menu-item:hover,
+.menu-item:active {
+    background-color: var(--card-hover-bg); 
+    border-color: var(--card-hover-border); 
+    transform: translateX(3px); 
+}
+
+.menu-item i {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+}
+
+/* Teks Cuplikan (*Snippet*) */
+.snippet { 
+    font-size: 0.8rem; 
+    color: var(--text-secondary); 
+    display: block; 
+    margin-top: 5px; 
+    line-height: 1.4; 
+    font-weight: 400;
+}
+
+/* Efek Sorot (*Highlight*) Pencarian Lembut */
+.highlight-blue { 
+    background-color: #eaf5e8 !important; 
+    color: #2f8522 !important; 
+    font-weight: 600; 
+    padding: 0 3px; 
+    border-radius: 4px; 
+}
+
+/* Kustomisasi Scrollbar */
+.menu-list::-webkit-scrollbar { width: 5px; }
+.menu-list::-webkit-scrollbar-track { background: transparent; }
+.menu-list::-webkit-scrollbar-thumb { background: #c8dac5; border-radius: 10px; }
+.menu-list::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }

@@ -1,0 +1,601 @@
+/* ==========================================================================
+   TAMPILAN CERAH ELEGAN & BERWARNA: LAYAR DIGITAL & PENCARIAN
+   ========================================================================== */
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #f7f9f6 0%, #edf2ec 100%);
+  --yellow: #F0E68C;
+    --card-bg: #ffffff;
+    --card-border: #e2ede0;
+    --card-hover-bg: #f4faf2;
+    --card-hover-border: #a3d995;
+    --text-primary: #2d402b;
+    --text-secondary: #60735d;
+    --accent-color: #3f9e30;
+    --accent-gradient: linear-gradient(135deg, #52b743 0%, #2f8522 100%);
+    --gold-accent: #b8860b;
+}
+
+/* --- Pengaturan Umum & Layar Baca --- */
+body {
+    font-family: 'Plus Jakarta Sans', 'Georgia', sans-serif;
+    background:#F0E68C;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Kotak Pencarian Sejajar Baris */
+.search-box {
+    background: var(--card-bg);
+    padding: 14px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px rgba(47, 133, 34, 0.04);
+    border: 1px solid var(--card-border);
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+    align-items: center;
+}
+
+#search-input {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 14px;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: right;
+    height: 40px;
+    box-sizing: border-box;
+    color: var(--text-primary);
+    background-color: #f7f9f6;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+#search-input:focus {
+    border-color: var(--accent-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(63, 158, 48, 0.15);
+}
+
+.btn-cari-mini {
+    height: 40px;
+    width: 42px;
+    background: #eaf5e8;
+    color: var(--accent-color);
+    border: 1px solid #d2ebd0;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.btn-cari-mini:active, .btn-cari-mini:hover {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.icon-select {
+    width: 100px;
+    height: 40px;
+    padding: 0 3px;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: #eaf5e8;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Hasil Pencarian */
+.placeholder-text {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(47, 133, 34, 0.02);
+    transition: all 0.25s ease;
+}
+
+.result-item:hover {
+    border-color: var(--card-hover-border);
+    background-color: var(--card-hover-bg);
+    transform: translateY(-1px);
+}
+
+.teks-arab-hasil-wrapper {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 12px;
+}
+
+.teks-arab-hasil-wrapper.buka-penuh {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+}
+
+/* Gaya Teks Arab Matan & Syarah */
+.matan-preview {
+    direction: rtl;
+    text-align: justify;
+    font-size: 17px;
+    font-weight: bold;
+    color: #1b4d14; /* Hijau islami tua elegan */
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.syarah-preview {
+    direction: rtl;
+    text-align: justify;
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+/* Garis Pemisah Tipis */
+.pemisah-preview {
+    border: 0;
+    border-top: 1px dashed var(--card-hover-border);
+    margin: 10px 0;
+    width: 100%;
+}
+
+.kitab-badge { 
+    background: var(--accent-gradient); 
+    color: white; 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    font-size: 11px; 
+    font-weight: bold; 
+}
+
+.page-badge { 
+    background: #7ca676; 
+    color: white; 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    font-size: 11px; 
+}
+
+/* --- HIGHLIGHT PENCARIAN PINK PASTEL ELEGAN --- */
+mark {
+    background-color: #a3d995 !important; 
+    color: #2d402b !important;            
+    font-weight: bold;
+    padding: 0 2px;
+    border-radius: 4px;
+                        
+}
+
+/* LAYAR BACAAN PENUH (FULL READER) SCENERY HIJAU CERAH */
+.full-reader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F0E68C;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.reader-header {
+    background: #f4faf2;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    direction: rtl;
+    border: 1px solid var(--card-border); /* Menambahkan border tipis agar bentuk oval lebih tegas */
+    box-shadow: 0 4px 15px rgba(47, 133, 34, 0.08);
+    box-sizing: border-box;
+    height: 60px;
+    position: relative;
+
+    /* --- PROPERTI UNTUK BENTUK OVAL & POSISI --- */
+    border-radius: 30px;        /* Membuat sudut kanan-kiri melengkung oval sempurna */
+    width: calc(100% - 24px);   /* Memberi sedikit ruang di kiri & kanan agar lengkungan terlihat melayang */
+    margin: 10px auto;          /* Mengetengahkan header dan memberi jarak dari bagian atas layar */
+}
+
+
+.header-right-side {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-back-arrow {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 14px;
+    color: var(--accent-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-back-arrow:active, .btn-back-arrow:hover {
+    background: var(--card-hover-bg);
+    border-color: var(--accent-color);
+}
+
+.book-title-header {
+    font-weight: 700;
+    font-size: 20px;
+    background: linear-gradient(to right, #2f8522, #60735d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.reader-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    background-color: #F0E68C; 
+}
+
+/* Bingkai Halaman Putih Bersih Premium */
+.halaman-box {
+    margin: 10px auto 15px auto; 
+    padding: 16px;
+    background-color: #ffffff; 
+    border: 2px solid var(--card-hover-border); 
+    border-radius: 20px; 
+    box-shadow: 0 8px 24px rgba(47, 133, 34, 0.04); 
+    box-sizing: border-box;
+    max-width: 100%;
+
+    /* --- TAMBAHKAN BARIS INI --- */
+    scroll-margin-top: 90px;
+}
+
+
+.blok-matan {
+    direction: rtl;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #1b4d14;
+    font-weight: bold;
+    margin-bottom: 14px;
+    white-space: pre-line;
+}
+
+.garis-pemisah-kitab {
+    border: 0;
+    border-top: 1px dashed var(--card-hover-border);
+    margin: 15px 0;
+    width: 100%;
+}
+
+.blok-syarah {
+    direction: rtl;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-top: 14px;
+    white-space: pre-line;
+}
+
+.nomor-halaman-footer {
+    text-align: center;
+    font-size: 16px;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin: 15px 0 5px 0;
+    display: block;
+}
+
+.garis-pembatas {
+    border: 0;
+    border-top: 1px solid var(--card-border);
+    margin-top: 10px;
+}
+
+.result-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 8px;
+}
+
+.badge-group {
+    display: flex;
+    gap: 6px;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.btn-baca-full-screen {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(82, 183, 67, 0.2);
+}
+
+.btn-toggle-detail {
+    background-color: #eaf5e8;
+    color: var(--accent-color);
+    border: 1px solid #d2ebd0;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.btn-toggle-detail.terbuka {
+    transform: rotate(180deg);
+}
+
+.goto-page-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 20;
+}
+
+#goto-page-input {
+    width: 48px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: var(--text-primary);
+    outline: none;
+}
+
+#goto-page-input:focus {
+    border-color: var(--accent-color);
+}
+
+#goto-page-input::-webkit-outer-spin-button,
+#goto-page-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-goto-page {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 30px;
+}
+
+.btn-goto-page:active {
+    background-color: #2f8522;
+}
+
+.total-page-badge {
+    background-color: #ffffff;
+    color: var(--text-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 35px;
+}
+
+/* --- CUSTOM DROPDOWN (FITUR FILTER SEGAR) --- */
+.custom-select-wrapper {
+    position: relative;
+    width: 100px; 
+}
+
+.custom-select-trigger {
+    height: 40px;
+    padding: 0 6px;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: #eaf5e8;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.custom-select-trigger:active {
+    background-color: #d2ebd0;
+}
+
+.custom-options {
+    display: none;
+    position: absolute;
+    top: 108%;
+    left: 0;
+    min-width: 170px; 
+    width: max-content; 
+    background-color: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(47, 133, 34, 0.08);
+    z-index: 1000;
+}
+
+.custom-options.show {
+    display: block;
+}
+
+#filter-kitab-input {
+    width: 90%;
+    margin: 8px auto;
+    display: block;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    outline: none;
+    font-size: 12px;
+    background-color: #f7f9f6;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.options-scroll-container {
+    max-height: 170px; 
+    overflow-y: auto;
+}
+
+.custom-option {
+    padding: 10px 14px;
+    font-size: 13px;
+    text-align: right;
+    cursor: pointer;
+    color: var(--text-primary);
+    border-bottom: 1px solid #f4faf2;
+    transition: all 0.2s ease;
+    white-space: nowrap; 
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.custom-option:last-child {
+    border-bottom: none;
+}
+
+.custom-option:hover {
+    background-color: var(--card-hover-bg);
+    color: var(--accent-color);
+}
+
+/* --- KOTAK KUTIPAN HIJAU PREMIUM --- */
+.quote-wrapper {
+    display: flex; 
+    align-items: center; 
+    background: var(--accent-gradient);
+    border: none; 
+    border-radius: 18px; 
+    padding: 16px; 
+    margin: 12px auto 18px auto; 
+    box-shadow: 0 6px 16px rgba(47, 133, 34, 0.15); 
+    box-sizing: border-box;
+}
+
+.quote-text {
+    flex: 1; 
+    font-size: 13px; 
+    color: #ffffff; 
+    text-align: center; 
+    font-weight: 600; 
+    padding-right: 15px; 
+    line-height: 1.5;
+}
+
+.quote-image {
+    width: 90px; 
+    height: 90px; 
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 12px; 
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    flex-shrink: 0; 
+}
+
+/* --- CUSTOM TOAST NOTIFICATION CERAH --- */
+.toast {
+    visibility: hidden;
+    min-width: 280px;
+    background-color: #ffffff; 
+    color: var(--text-primary); 
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    border-radius: 14px;
+    padding: 12px 18px;
+    position: fixed;
+    z-index: 10000; 
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(47, 133, 34, 0.12);
+    opacity: 0;
+    transition: opacity 0.4s, bottom 0.4s, visibility 0.4s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; 
+}

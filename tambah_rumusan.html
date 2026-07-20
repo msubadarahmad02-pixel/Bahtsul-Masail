@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Tambah Rumusan Data</title>
+    <link rel="stylesheet" href="tambah_rumusan.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-box">
+        <h2>Formulir Untuk Menambah Rumusan Baru</h2>
+        
+        <label for="id">ID (Gabungan kategori dan judul pendek serta memakai huruf kecil dan underscore):</label>
+        <input type="text" id="id" placeholder="Contoh: sholat_mufaroqoh_jumat">
+        
+        <label for="kategori">Kategori:</label>
+        <input type="text" id="kategori" placeholder="Contoh: Sholat">
+        
+        <label for="judul_pendek">Judul Pendek:</label>
+        <input type="text" id="judul_pendek" placeholder="Contoh: Mufaroqoh jumat">
+        
+        <label for="deskripsi">Deskripsi Latar Belakang:</label>
+        <textarea id="deskripsi" placeholder="Masukkan deskripsi atau ilustrasi masalah..."></textarea>
+        
+        <label for="pertanyaan">Pertanyaan:</label>
+        <textarea id="pertanyaan" placeholder="Masukkan pertanyaan hukum..."></textarea>
+        
+        <label for="jawaban">Jawaban Fikih:</label>
+        <textarea id="jawaban" class="tall-textarea" placeholder="Masukkan jawaban..."></textarea>
+        
+        <label for="referensi">Referensi (Pisahkan setiap kitab dengan Enter / Baris Baru):</label>
+       <textarea id="referensi" class="tall-textarea" placeholder="baris 1: باجوري ج:٢ ص:٥٤         baris 2: وهو لغة الإثبات"></textarea>
+        
+        <button onclick="hasilJSON()" class="btn-generate">Generate (Buat Rumusan Baru)</button>
+        
+        <hr>
+        
+        <label>Hasil Output:</label>
+        <textarea id="output" readonly placeholder="Hasil akan muncul di sini..."></textarea>
+        
+        <div class="button-group">
+            <button onclick="copyToClipboard()" class="btn-copy">Salin ke Clipboard 📋</button>
+            <button onclick="sendToWhatsApp()" class="btn-wa">Kirim ke WA 💬</button>
+        </div>
+    </div>
+</div>
+
+<div id="customAlert" class="modal-overlay">
+    <div class="modal-box">
+        <div class="modal-icon">🫰️</div>
+        <div id="modalMessage" class="modal-message">Generate dulu nduk!</div>
+        <button onclick="closeAlert()" class="modal-btn">Oke</button>
+    </div>
+</div>
+
+
+<script src="tambah_rumusan.js"></script>
+</body>
+</html>
