@@ -1,25 +1,15 @@
 [
 {
-  "id": "haji_belum_diisi",
-  "kategori": "Haji",
-  "judul_pendek": "Belum diisi",
-  "deskripsi": "Belum diisi",
-  "pertanyaan": "Belum diisi",
-  "jawaban": "Belum diisi",
+  "id": "walimatul_urs_sumbangan",
+  "kategori": "walimatul 'urs",
+  "judul_pendek": "sumbangan",
+  "deskripsi": "Permasalahan uang sumbangan pernikahan sering muncul ketika terjadi perbedaan pemahaman antara pihak yang memberi dan menerima. Misalnya, apakah uang sumbangan dianggap sebagai pemberian sukarela, utang yang harus dikembalikan, atau bentuk bantuan yang memiliki konsekuensi tertentu. Karena itu, perlu ada kejelasan mengenai niat dan kebiasaan yang berlaku agar tidak menimbulkan perselisihan di kemudian hari.",
+  "pertanyaan": "apa setatus uang sumbangan pernikahan?",
+  "jawaban": "bisa hutang juga bisa hibbah",
   "referensi": [
-    "حاج"
-  ]
-    },
-  
-  {
-  "id": "zakat_belum_diisi",
-  "kategori": "Zakat",
-  "judul_pendek": "Belum diisi",
-  "deskripsi": "Belum diisi",
-  "pertanyaan": "Belum diisi",
-  "jawaban": "Belum diisi",
-  "referensi": [
-    "زكاة"
+    "إعانة الطالبين على حل ألفاظ فتح المعين ٣/‏٦٣ — البكري الدمياطي (ت ١٣١٠)",
+    "قال شيخنا: والاوجه في النقوط المعتاد في الافراح أنه هبة، لا قرض، وإن اعتيد رد مثله.",
+    "(قوله: قال شيخنا: والأوجه في النقوط إلخ) عبارة التحفة: والذي يتجه في النقوط المعتاد في الأفراح أنه هبة، ولا أثر للعرف فيه - لاضطرابه - ما لم يقل خذه مثلا، وينوي القرض، ويصدق في نية ذلك هو أو وارثه. وعلى هذا، يحمل إطلاق جمع أنه قرض - أي حكما -.ثم رأيت بعضهم لما نقل قول هؤلاء، وقول البلقيني أنه هبة، قال: ويحمل الأول على ما إذا اعتيد الرجوع به، والثاني على ما لم يعتد.قال: لاختلافه بأحوال الناس والبلاد.اه.وحيث علم اختلافه. تعين ما ذكرته، ويأتي قبيل اللقطة تقييد هذا الخلاف بما يتعين الوقوف عليه. اه. وحاصله أن محله إذا دفع لصاحب الفرح في يده، فإن دفع للخاتن فلا رجوع. وفي حاشية البجيرمي على شرح المنهج: والذي تحرر من كلام الرملي وابن حجر وحواشيهما: أنه لا رجوع في النقوط المعتاد في الأفراح - أي لا يرجع به مالكه إذا وضعه في يد صاحب الفرح، أو يد مأذونه - إلا بشروط ثلاثة: أن يأتي بلفظ: كخذه، ونحوه. وأن ينوي الرجوع، ويصدق هو أو وارثه فيها. وأن يعتاد الرجوع فيه. وإذا وضعه في يد المزين ونحوه، أو في الطاسة المعروفة، لا يرجع إلا بشرطين: إذن صاحب الفرح، وشرط الرجوع - كما حققه شيخنا ح ف. اه."
   ]
 }
 
