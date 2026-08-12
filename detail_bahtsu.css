@@ -19,7 +19,7 @@
 }
 
 body { 
-    background: #F0E68C; 
+    background: #a6a6a6; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
@@ -27,14 +27,14 @@ body {
     margin: 0; 
     font-family: 'Plus Jakarta Sans', sans-serif; 
     color: var(--text-primary);
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
 }
 
 .container { 
-    background-color: var(--card-bg); 
+    background-color: #FFFF00; 
     border-radius: 24px; 
-    padding: 10px 10px; 
+    padding: 5px 5px; 
     width: 100%;
     max-width: 98%; 
     box-shadow: 0 8px 20px rgba(47, 133, 34, 0.04); 
