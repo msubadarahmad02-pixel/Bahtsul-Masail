@@ -1,26 +1,4 @@
 [
-{
-  "id": "puasa_belum_diisi",
-  "kategori": "Puasa",
-  "judul_pendek": "Belum diisi",
-  "deskripsi": "Belum diisi",
-  "pertanyaan": "Belum diisi",
-  "jawaban": "Belum diisi",
-  "referensi": [
-    "صوم"
-  ]
-    },
-  
-  {
-  "id": "sholat_belum_diisi",
-  "kategori": "Sholat",
-  "judul_pendek": "Belum diisi",
-  "deskripsi": "Belum diisi",
-  "pertanyaan": "Belum diisi",
-  "jawaban": "Belum diisi",
-  "referensi": [
-    "الصلاة"
-  ]
-}
+
 
 ]
