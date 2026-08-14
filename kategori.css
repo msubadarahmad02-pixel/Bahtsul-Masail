@@ -108,7 +108,7 @@ body {
 .rumusan-list {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 12px;
     margin-top: 5px;
     max-height: 420px;
     overflow-y: auto;
