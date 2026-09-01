@@ -108,7 +108,9 @@ body {
     line-height: 1.6; 
     text-align: justify; 
     margin: 8px 0; 
+    white-space: pre-line; /* Menjaga teks enter di JSON agar tampil sebagai baris baru */
 }
+
 
 .content-text[style*="direction: rtl"] {
     font-family: 'KfgqpcArabic', serif; 
