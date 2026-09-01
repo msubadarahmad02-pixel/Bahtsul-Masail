@@ -90,20 +90,16 @@
                         return `<p class="content-text" ${isAr ? 'style="direction: rtl;"' : ''}>${ref}</p>`;
                     }).join('');
 
-                    const deskripsiHtml = item.deskripsi.split('\n').map(line => {
-                        const isAr = /[\u0600-\u06FF]/.test(line);
-                        return `<p class="content-text" ${isAr ? 'style="direction: rtl;"' : ''}>${line}</p>`;
-                    }).join('');
+                    // Cek teks Arab & biarkan karakter \n utuh agar dibaca CSS pre-line
+const isArDeskripsi = /[\u0600-\u06FF]/.test(item.deskripsi);
+const deskripsiHtml = `<p class="content-text" ${isArDeskripsi ? 'style="direction:rtl; text-align:justify; text-justify:inter-word; font-size:1.1em;"' : ''}>${item.deskripsi}</p>`;
 
-                    const pertanyaanHtml = item.pertanyaan.split('\n').map(line => {
-                        const isAr = /[\u0600-\u06FF]/.test(line);
-                        return `<p class="content-text" ${isAr ? 'style="direction: rtl;"' : ''}>${line}</p>`;
-                    }).join('');
+const isArPertanyaan = /[\u0600-\u06FF]/.test(item.pertanyaan);
+const pertanyaanHtml = `<p class="content-text" ${isArPertanyaan ? 'style="direction:rtl; text-align:justify; text-justify:inter-word; font-size:1.1em;"' : ''}>${item.pertanyaan}</p>`;
 
-                    const jawabanHtml = item.jawaban.split('\n').map(line => {
-                        const isAr = /[\u0600-\u06FF]/.test(line);
-                        return `<p class="content-text" ${isAr ? 'style="direction: rtl;"' : ''}>${line}</p>`;
-                    }).join('');
+const isArJawaban = /[\u0600-\u06FF]/.test(item.jawaban);
+const jawabanHtml = `<p class="content-text" ${isArJawaban ? 'style="direction:rtl; text-align:justify; text-justify:inter-word; font-size:1.1em;"' : ''}>${item.jawaban}</p>`;
+
 
                     // Masukkan variabel ke dalam HTML
                     document.getElementById('rumusanContent').innerHTML = `
