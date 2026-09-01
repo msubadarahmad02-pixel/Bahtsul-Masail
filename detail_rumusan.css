@@ -148,7 +148,8 @@ body {
     color: var(--text-primary); 
     line-height: 1.6; 
     text-align: justify; 
-    margin: 8px 0; 
+    margin: 8px 0;
+    white-space: pre-line; /* Menjaga teks enter di JSON agar tampil sebagai baris baru */
 }
 
 /* Pengaturan Khusus Jika Teks Berarah RTL (Teks Arab) */
